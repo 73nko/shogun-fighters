@@ -99,9 +99,11 @@ const faqs = [
             CONOCE MÁS
           </a>
         </div>
-        <div class='mt-8 text-gray-400'>
-          <p class='mb-2'>📍 Calle Sierra Toledana, 11 - Vallecas, Madrid</p>
-          <p>
+        <div class='mt-8 text-gray-400 mb-16 md:mb-12'>
+          <p class='mb-2 text-center'>
+            📍 Calle Sierra Toledana, 11 - Vallecas, Madrid
+          </p>
+          <p class='text-center'>
             ☎️ <a
               href='tel:+34672693733'
               class='text-shogun-red hover:text-white transition-colors'
@@ -109,6 +111,30 @@ const faqs = [
             >
           </p>
         </div>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <div
+        class='absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce'>
+        <a
+          href='#disciplines'
+          class='flex flex-col items-center text-white hover:text-shogun-red transition-colors'>
+          <span
+            class='text-xs md:text-sm uppercase tracking-wide mb-2 opacity-75'
+            >Descubre más</span
+          >
+          <svg
+            class='w-5 h-5 md:w-6 md:h-6'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'>
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M19 14l-7 7m0 0l-7-7m7 7V3'></path>
+          </svg>
+        </a>
       </div>
     </section>
 
