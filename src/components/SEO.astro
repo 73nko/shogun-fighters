@@ -1,0 +1,98 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+	canonicalURL?: string;
+	image?: string;
+	type?: 'website' | 'article';
+	businessName?: string;
+	businessType?: string;
+	address?: {
+		streetAddress: string;
+		addressLocality: string;
+		addressRegion: string;
+		postalCode: string;
+		addressCountry: string;
+	};
+	telephone?: string;
+	geo?: {
+		latitude: number;
+		longitude: number;
+	};
+	openingHours?: string[];
+	priceRange?: string;
+}
+
+const {
+	title,
+	description,
+	canonicalURL = Astro.url,
+	image = '/og-image.jpg',
+	type = 'website',
+	businessName,
+	businessType = 'SportsActivityLocation',
+	address,
+	telephone,
+	geo,
+	openingHours,
+	priceRange
+} = Astro.props;
+
+const businessSchema = businessName ? {
+	"@context": "https://schema.org",
+	"@type": ["LocalBusiness", businessType],
+	"name": businessName,
+	"description": description,
+	"url": canonicalURL,
+	"telephone": telephone,
+	"address": address ? {
+		"@type": "PostalAddress",
+		...address
+	} : undefined,
+	"geo": geo ? {
+		"@type": "GeoCoordinates",
+		"latitude": geo.latitude,
+		"longitude": geo.longitude
+	} : undefined,
+	"openingHoursSpecification": openingHours?.map(hours => ({
+		"@type": "OpeningHoursSpecification",
+		"dayOfWeek": hours.split(':')[0],
+		"opens": hours.split(':')[1]?.split('-')[0],
+		"closes": hours.split(':')[1]?.split('-')[1]
+	})),
+	"priceRange": priceRange
+} : null;
+
+const websiteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"name": title,
+	"description": description,
+	"url": canonicalURL
+};
+---
+
+<!-- Structured Data -->
+{businessSchema && (
+	<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+)}
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={businessName || title} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Additional SEO -->
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href={canonicalURL} />
