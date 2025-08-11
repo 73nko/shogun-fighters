@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero logo background */
 .hero-logo {
 	background-image: url('/logo-shogun-fighters.png');
-	background-size: 500 450px;
+	background-size: 500 400px;
 	background-position: center;
 	background-repeat: no-repeat;
 	opacity: 0.10;
