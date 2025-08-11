@@ -1,50 +1,71 @@
 ---
 export interface FAQItem {
-	question: string;
-	answer: string;
+  question: string;
+  answer: string;
 }
 
 export interface Props {
-	faqs: FAQItem[];
+  faqs: FAQItem[];
 }
 
 const { faqs } = Astro.props;
 
 const faqSchema = {
-	"@context": "https://schema.org",
-	"@type": "FAQPage",
-	"mainEntity": faqs.map(faq => ({
-		"@type": "Question",
-		"name": faq.question,
-		"acceptedAnswer": {
-			"@type": "Answer",
-			"text": faq.answer
-		}
-	}))
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+<script type='application/ld+json' set:html={JSON.stringify(faqSchema)} />
 
-<section class="py-20 bg-shogun-gray-dark">
-	<div class="container mx-auto px-4">
-		<h2 class="text-4xl font-oswald text-white text-center mb-16">PREGUNTAS FRECUENTES</h2>
-		<div class="max-w-4xl mx-auto space-y-6">
-			{faqs.map((faq) => (
-				<details class="group bg-shogun-black rounded-lg border border-shogun-gray">
-					<summary class="flex items-center justify-between p-8 cursor-pointer list-none hover:bg-shogun-gray-dark transition-colors">
-						<h3 class="text-xl font-oswald text-white">{faq.question}</h3>
-						<span class="ml-6 flex-shrink-0">
-							<svg class="w-6 h-6 text-shogun-red group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-							</svg>
-						</span>
-					</summary>
-					<div class="px-8 pb-8">
-						<p class="text-gray-300 text-lg leading-relaxed">{faq.answer}</p>
-					</div>
-				</details>
-			))}
-		</div>
-	</div>
+<section class='py-20 bg-shogun-gray-dark'>
+  <div class='container mx-auto px-4'>
+    <div class='text-center mb-16'>
+      <div class='flex items-center justify-center gap-1 mb-1'>
+        <img
+          src='/logo-shogun-fighters.png'
+          alt=''
+          class='w-22 h-20 opacity-80'
+        />
+        <h2 class='text-4xl font-oswald text-white'>PREGUNTAS FRECUENTES</h2>
+      </div>
+    </div>
+    <div class='max-w-4xl mx-auto space-y-6'>
+      {
+        faqs.map((faq) => (
+          <details class='group bg-shogun-black rounded-lg border border-shogun-gray'>
+            <summary class='flex items-center justify-between p-8 cursor-pointer list-none hover:bg-shogun-gray-dark transition-colors'>
+              <h3 class='text-xl font-oswald text-white'>{faq.question}</h3>
+              <span class='ml-6 flex-shrink-0'>
+                <svg
+                  class='w-6 h-6 text-shogun-red group-open:rotate-180 transition-transform duration-300'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'>
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M19 9l-7 7-7-7'
+                  />
+                </svg>
+              </span>
+            </summary>
+            <div class='px-8 pb-8'>
+              <p class='text-gray-300 text-lg leading-relaxed'>{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
 </section>

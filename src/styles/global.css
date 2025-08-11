@@ -74,6 +74,29 @@ h1, h2, h3, h4, h5, h6 {
 	background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
 }
 
+/* Hero logo background */
+.hero-logo {
+	background-image: url('/logo-shogun-fighters.png');
+	background-size: 500 450px;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0.15;
+	transform: translateY(-100px);
+}
+
+@media (min-width: 768px) {
+	.hero-logo {
+		background-size: 650px 600px;
+		transform: translateY(-80px);
+	}
+}
+
+@media (min-width: 1024px) {
+	.hero-logo {
+		background-size: 650px 600px;
+		transform: translateY(-80px);
+	}
+}
 /* Text shadows for better readability */
 .text-shadow-strong {
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
