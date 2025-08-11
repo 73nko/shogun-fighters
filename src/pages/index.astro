@@ -4,253 +4,319 @@ import SEO from '../components/SEO.astro';
 import FAQ from '../components/FAQ.astro';
 
 const faqs = [
-	{
-		question: "¿Para qué niveles son las clases?",
-		answer: "Para todos los niveles. Aquí no importa si eres un profesional o si es tu primer día, es un espacio donde todos aprendemos de todos."
-	},
-	{
-		question: "¿Desde qué edad pueden entrenar?",
-		answer: "Tenemos clases desde los 5 años en adelante y hasta que el cuerpo aguante. Hay Shogun Fighters que ya tienen una edad y aguantan como el que más."
-	},
-	{
-		question: "¿La primera clase es realmente gratis?",
-		answer: "¡Sí! La primera clase es completamente gratuita. Vente, nos conocemos y de paso te conviertes en un Shogun Fighter."
-	},
-	{
-		question: "¿Qué horarios tienen disponibles?",
-		answer: "Tenemos horarios de mañana y de tarde para adaptarnos a tu disponibilidad. Contacta con nosotros para conocer todos los horarios disponibles."
-	}
+  {
+    question: '¿Para qué niveles son las clases?',
+    answer:
+      'Para todos los niveles. Aquí no importa si eres un profesional o si es tu primer día, es un espacio donde todos aprendemos de todos.',
+  },
+  {
+    question: '¿Desde qué edad pueden entrenar?',
+    answer:
+      'Tenemos clases desde los 5 años en adelante y hasta que el cuerpo aguante. Hay Shogun Fighters que ya tienen una edad y aguantan como el que más.',
+  },
+  {
+    question: '¿La primera clase es realmente gratis?',
+    answer:
+      '¡Sí! La primera clase es completamente gratuita. Vente, nos conocemos y de paso te conviertes en un Shogun Fighter.',
+  },
+  {
+    question: '¿Qué horarios tienen disponibles?',
+    answer:
+      'Tenemos horarios de mañana y de tarde para adaptarnos a tu disponibilidad. Contacta con nosotros para conocer todos los horarios disponibles.',
+  },
 ];
 ---
 
-<Layout 
-	title="Shogun Fighters Club - Artes Marciales en Vallecas"
-	description="Club de artes marciales en Vallecas, Madrid. Boxeo, MMA y Muay Thai para todos los niveles y edades. Primera clase gratis."
->
-	<SEO
-		title="Shogun Fighters Club - Boxeo, MMA y Muay Thai en Vallecas"
-		description="Únete a la familia Shogun Fighters. Club de artes marciales en Vallecas con Boxeo, MMA y Muay Thai. Todos los niveles bienvenidos. Primera clase gratis."
-		businessName="Shogun Fighters Club"
-		businessType="SportsActivityLocation"
-		address={{
-			streetAddress: "Calle Sierra Toledana, 11",
-			addressLocality: "Vallecas",
-			addressRegion: "Madrid",
-			postalCode: "28031",
-			addressCountry: "ES"
-		}}
-		telephone="+34672693733"
-		slot="head"
-	/>
-	
-	<main>
-		<!-- Hero Section -->
-		<section class="relative min-h-screen flex items-center justify-center bg-shogun-black hero-overlay">
-			<div class="absolute inset-0 bg-gradient-to-br from-black/80 to-gray-900/60"></div>
-			<div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
-				<h1 class="text-6xl md:text-8xl font-bold text-shadow-strong mb-6">
-					<span class="block text-white">SHOGUN</span>
-					<span class="block text-shogun-red">FIGHTERS</span>
-					<span class="block text-white text-4xl md:text-5xl mt-2">CLUB</span>
-				</h1>
-				<p class="text-2xl md:text-3xl font-oswald text-gray-300 mb-4 tracking-wide">
-					BOXEO • MMA • MUAY THAI
-				</p>
-				<p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-					¿Estás listo/a para unirte a la familia? Tu escuela de artes marciales favorita en Vallecas
-				</p>
-				<div class="mb-12">
-					<p class="text-4xl md:text-5xl font-oswald text-shogun-red font-bold mb-4 animate-pulse">
-						PRIMERA CLASE GRATIS
-					</p>
-				</div>
-				<div class="flex flex-col sm:flex-row gap-6 justify-center">
-					<a href="tel:+34672693733" class="btn-primary px-8 py-4 text-lg inline-block rounded-lg animate-punch">
-						EMPIEZA AHORA
-					</a>
-					<a href="#disciplines" class="btn-secondary px-8 py-4 text-lg inline-block rounded-lg">
-						CONOCE MÁS
-					</a>
-				</div>
-				<div class="mt-8 text-gray-400">
-					<p class="mb-2">📍 Calle Sierra Toledana, 11 - Vallecas, Madrid</p>
-					<p>☎️ <a href="tel:+34672693733" class="text-shogun-red hover:text-white transition-colors">672 693 733</a></p>
-				</div>
-			</div>
-		</section>
+<Layout
+  title='Shogun Fighters Club - Artes Marciales en Vallecas'
+  description='Club de artes marciales en Vallecas, Madrid. Boxeo, MMA y Muay Thai para todos los niveles y edades. Primera clase gratis.'>
+  <SEO
+    title='Shogun Fighters Club - Boxeo, MMA y Muay Thai en Vallecas'
+    description='Únete a la familia Shogun Fighters. Club de artes marciales en Vallecas con Boxeo, MMA y Muay Thai. Todos los niveles bienvenidos. Primera clase gratis.'
+    businessName='Shogun Fighters Club'
+    businessType='SportsActivityLocation'
+    address={{
+      streetAddress: 'Calle Sierra Toledana, 11',
+      addressLocality: 'Vallecas',
+      addressRegion: 'Madrid',
+      postalCode: '28031',
+      addressCountry: 'ES',
+    }}
+    telephone='+34672693733'
+    slot='head'
+  />
 
-		<!-- Community Message -->
-		<section class="py-16 bg-shogun-gray-dark">
-			<div class="container mx-auto px-4 text-center">
-				<h2 class="text-3xl md:text-4xl font-oswald text-white mb-6">
-					UN ESPACIO DONDE TODOS APRENDEMOS DE TODOS
-				</h2>
-				<p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-					No importa si eres un profesional 👌 o si es tu primer día. Aquí todos somos familia y crecemos juntos en el arte de las artes marciales.
-				</p>
-			</div>
-		</section>
+  <main>
+    <!-- Hero Section -->
+    <section
+      class='relative min-h-screen flex items-center justify-center bg-shogun-black hero-overlay'>
+      <div
+        class='absolute inset-0 bg-gradient-to-br from-black/80 to-gray-900/60'>
+      </div>
+      <div class='relative z-10 text-center px-4 max-w-6xl mx-auto'>
+        <h1 class='text-6xl md:text-8xl font-bold text-shadow-strong mb-6'>
+          <span class='block text-white'>SHOGUN</span>
+          <span class='block text-shogun-red'>FIGHTERS</span>
+          <span class='block text-white text-4xl md:text-5xl mt-2'>CLUB</span>
+        </h1>
+        <p
+          class='text-2xl md:text-3xl font-oswald text-gray-300 mb-4 tracking-wide'>
+          BOXEO • MMA • MUAY THAI
+        </p>
+        <p class='text-xl text-gray-400 mb-8 max-w-3xl mx-auto'>
+          ¿Estás listo/a para unirte a la familia? Tu escuela de artes marciales
+          favorita en Vallecas
+        </p>
+        <div class='mb-12'>
+          <p
+            class='text-4xl md:text-5xl font-oswald text-shogun-red font-bold mb-4 animate-pulse'>
+            PRIMERA CLASE GRATIS
+          </p>
+        </div>
+        <div class='flex flex-col sm:flex-row gap-6 justify-center'>
+          <a
+            href='tel:+34672693733'
+            class='btn-primary px-8 py-4 text-lg inline-block rounded-lg animate-punch'>
+            EMPIEZA AHORA
+          </a>
+          <a
+            href='#disciplines'
+            class='btn-secondary px-8 py-4 text-lg inline-block rounded-lg'>
+            CONOCE MÁS
+          </a>
+        </div>
+        <div class='mt-8 text-gray-400'>
+          <p class='mb-2'>📍 Calle Sierra Toledana, 11 - Vallecas, Madrid</p>
+          <p>
+            ☎️ <a
+              href='tel:+34672693733'
+              class='text-shogun-red hover:text-white transition-colors'
+              >672 693 733</a
+            >
+          </p>
+        </div>
+      </div>
 
-		<!-- Disciplines Section -->
-		<section id="disciplines" class="py-20 bg-shogun-black">
-			<div class="container mx-auto px-4">
-				<div class="text-center mb-16">
-					<h2 class="text-4xl md:text-5xl font-oswald text-white mb-6">NUESTRAS DISCIPLINAS</h2>
-					<p class="text-xl text-gray-400 max-w-2xl mx-auto">
-						Entrena con los mejores instructores en las disciplinas más efectivas del combate
-					</p>
-				</div>
-				
-				<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-					<div class="bg-shogun-gray-dark p-8 rounded-lg text-center hover:bg-shogun-gray transition-colors animate-punch">
-						<div class="text-6xl mb-6">🥊</div>
-						<h3 class="text-2xl font-oswald text-white mb-4">BOXEO</h3>
-						<p class="text-gray-300">
-							El arte dulce de la ciencia. Técnica, velocidad y precisión en cada golpe. Perfecto para fitness y defensa personal.
-						</p>
-					</div>
-					
-					<div class="bg-shogun-gray-dark p-8 rounded-lg text-center hover:bg-shogun-gray transition-colors animate-punch">
-						<div class="text-6xl mb-6">🥊</div>
-						<h3 class="text-2xl font-oswald text-white mb-4">MMA</h3>
-						<p class="text-gray-300">
-							Artes marciales mixtas. Combina lo mejor de cada disciplina: striking, grappling y ground fighting.
-						</p>
-					</div>
-					
-					<div class="bg-shogun-gray-dark p-8 rounded-lg text-center hover:bg-shogun-gray transition-colors animate-punch">
-						<div class="text-6xl mb-6">🥊</div>
-						<h3 class="text-2xl font-oswald text-white mb-4">MUAY THAI</h3>
-						<p class="text-gray-300">
-							El arte de las ocho extremidades. Puños, codos, rodillas y piernas en la disciplina más completa del striking.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
+      <!-- Scroll Down Indicator -->
+      <div
+        class='absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce'>
+        <a
+          href='#disciplines'
+          class='flex flex-col items-center text-white hover:text-shogun-red transition-colors'>
+          <span class='text-sm uppercase tracking-wide mb-2 opacity-75'
+            >Descubre más</span
+          >
+          <svg
+            class='w-6 h-6'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'>
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M19 14l-7 7m0 0l-7-7m7 7V3'></path>
+          </svg>
+        </a>
+      </div>
+    </section>
 
-		<!-- Levels and Ages Section -->
-		<section class="py-20 bg-shogun-gray-dark">
-			<div class="container mx-auto px-4">
-				<div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-					<div class="text-center">
-						<h3 class="text-3xl font-oswald text-white mb-8">NIVELES</h3>
-						<div class="space-y-4 text-left">
-							<div class="flex items-center text-gray-300 text-lg">
-								<span class="text-shogun-red mr-4">✓</span>
-								<span>Principiantes absolutos</span>
-							</div>
-							<div class="flex items-center text-gray-300 text-lg">
-								<span class="text-shogun-red mr-4">✓</span>
-								<span>Nivel intermedio</span>
-							</div>
-							<div class="flex items-center text-gray-300 text-lg">
-								<span class="text-shogun-red mr-4">✓</span>
-								<span>Nivel avanzado</span>
-							</div>
-							<div class="flex items-center text-gray-300 text-lg">
-								<span class="text-shogun-red mr-4">✓</span>
-								<span>Profesionales</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="text-center">
-						<h3 class="text-3xl font-oswald text-white mb-8">EDADES</h3>
-						<div class="space-y-4 text-left">
-							<div class="flex items-center text-gray-300 text-lg">
-								<span class="text-shogun-red mr-4">✓</span>
-								<span>Niños desde 5 años</span>
-							</div>
-							<div class="flex items-center text-gray-300 text-lg">
-								<span class="text-shogun-red mr-4">✓</span>
-								<span>Adolescentes</span>
-							</div>
-							<div class="flex items-center text-gray-300 text-lg">
-								<span class="text-shogun-red mr-4">✓</span>
-								<span>Adultos</span>
-							</div>
-							<div class="flex items-center text-gray-300 text-lg">
-								<span class="text-shogun-red mr-4">✓</span>
-								<span>Hasta que el cuerpo aguante</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="text-center mt-16">
-					<p class="text-xl text-gray-300 max-w-3xl mx-auto">
-						<strong class="text-white">Horarios flexibles:</strong> Clases de mañana y tarde para adaptarnos a tu rutina.
-					</p>
-				</div>
-			</div>
-		</section>
+    <!-- Community Message -->
+    <section class='py-16 bg-shogun-gray-dark'>
+      <div class='container mx-auto px-4 text-center'>
+        <h2 class='text-3xl md:text-4xl font-oswald text-white mb-6'>
+          UN ESPACIO DONDE TODOS APRENDEMOS DE TODOS
+        </h2>
+        <p class='text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed'>
+          No importa si eres un profesional 👌 o si es tu primer día. Aquí todos
+          somos familia y crecemos juntos en el arte de las artes marciales.
+        </p>
+      </div>
+    </section>
 
-		<!-- Call to Action Section -->
-		<section class="py-20 bg-gradient-to-r from-shogun-red to-red-700">
-			<div class="container mx-auto px-4 text-center">
-				<h2 class="text-5xl md:text-6xl font-oswald text-white mb-6 text-shadow-strong">
-					PRIMERA CLASE
-				</h2>
-				<h3 class="text-6xl md:text-7xl font-oswald text-white mb-8 text-shadow-strong">
-					GRATIS
-				</h3>
-				<p class="text-2xl text-white mb-12 max-w-3xl mx-auto">
-					Vente, nos conocemos y de paso te conviertes en un Shogun Fighter 💪🏼🙏
-				</p>
-				<a href="tel:+34672693733" class="bg-white text-shogun-red px-12 py-4 text-xl font-oswald font-bold rounded-lg hover:bg-gray-100 transition-colors inline-block">
-					LLAMA AHORA: 672 693 733
-				</a>
-			</div>
-		</section>
+    <!-- Disciplines Section -->
+    <section id='disciplines' class='py-20 bg-shogun-black'>
+      <div class='container mx-auto px-4'>
+        <div class='text-center mb-16'>
+          <h2 class='text-4xl md:text-5xl font-oswald text-white mb-6'>
+            NUESTRAS DISCIPLINAS
+          </h2>
+          <p class='text-xl text-gray-400 max-w-2xl mx-auto'>
+            Entrena con los mejores instructores en las disciplinas más
+            efectivas del combate
+          </p>
+        </div>
 
-		<!-- FAQ Section -->
-		<FAQ faqs={faqs} />
+        <div class='grid md:grid-cols-3 gap-8 max-w-5xl mx-auto'>
+          <div
+            class='bg-shogun-gray-dark p-8 rounded-lg text-center hover:bg-shogun-gray transition-colors animate-punch'>
+            <div class='text-6xl mb-6'>🥊</div>
+            <h3 class='text-2xl font-oswald text-white mb-4'>BOXEO</h3>
+            <p class='text-gray-300'>
+              El arte dulce de la ciencia. Técnica, velocidad y precisión en
+              cada golpe. Perfecto para fitness y defensa personal.
+            </p>
+          </div>
 
-		<!-- Contact Section -->
-		<section class="py-20 bg-shogun-black">
-			<div class="container mx-auto px-4">
-				<div class="text-center mb-12">
-					<h2 class="text-4xl font-oswald text-white mb-6">VISÍTANOS</h2>
-					<p class="text-xl text-gray-400">Tu nueva casa de artes marciales te espera</p>
-				</div>
-				
-				<div class="max-w-4xl mx-auto">
-					<div class="grid md:grid-cols-2 gap-12">
-						<div>
-							<h3 class="text-2xl font-oswald text-white mb-6">UBICACIÓN</h3>
-							<div class="space-y-4 text-gray-300">
-								<p class="flex items-center text-lg">
-									<span class="text-shogun-red mr-4">📍</span>
-									Calle Sierra Toledana, 11<br/>
-									Vallecas, Madrid 28031
-								</p>
-							</div>
-						</div>
-						
-						<div>
-							<h3 class="text-2xl font-oswald text-white mb-6">CONTACTO</h3>
-							<div class="space-y-4 text-gray-300">
-								<p class="flex items-center text-lg">
-									<span class="text-shogun-red mr-4">☎️</span>
-									<a href="tel:+34672693733" class="hover:text-white transition-colors">672 693 733</a>
-								</p>
-								<p class="flex items-center text-lg">
-									<span class="text-shogun-red mr-4">🕐</span>
-									Mañanas y tardes<br/>
-									<span class="text-sm text-gray-400">Llama para horarios específicos</span>
-								</p>
-							</div>
-						</div>
-					</div>
-					
-					<div class="text-center mt-16">
-						<a href="tel:+34672693733" class="btn-primary px-12 py-4 text-xl inline-block rounded-lg">
-							LLAMA Y RESERVA TU CLASE GRATIS
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
+          <div
+            class='bg-shogun-gray-dark p-8 rounded-lg text-center hover:bg-shogun-gray transition-colors animate-punch'>
+            <div class='text-6xl mb-6'>🥊</div>
+            <h3 class='text-2xl font-oswald text-white mb-4'>MMA</h3>
+            <p class='text-gray-300'>
+              Artes marciales mixtas. Combina lo mejor de cada disciplina:
+              striking, grappling y ground fighting.
+            </p>
+          </div>
+
+          <div
+            class='bg-shogun-gray-dark p-8 rounded-lg text-center hover:bg-shogun-gray transition-colors animate-punch'>
+            <div class='text-6xl mb-6'>🥊</div>
+            <h3 class='text-2xl font-oswald text-white mb-4'>MUAY THAI</h3>
+            <p class='text-gray-300'>
+              El arte de las ocho extremidades. Puños, codos, rodillas y piernas
+              en la disciplina más completa del striking.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Levels and Ages Section -->
+    <section class='py-20 bg-shogun-gray-dark'>
+      <div class='container mx-auto px-4'>
+        <div class='grid md:grid-cols-2 gap-12 max-w-5xl mx-auto'>
+          <div class='text-center'>
+            <h3 class='text-3xl font-oswald text-white mb-8'>NIVELES</h3>
+            <div class='space-y-4 text-left'>
+              <div class='flex items-center text-gray-300 text-lg'>
+                <span class='text-shogun-red mr-4'>✓</span>
+                <span>Principiantes absolutos</span>
+              </div>
+              <div class='flex items-center text-gray-300 text-lg'>
+                <span class='text-shogun-red mr-4'>✓</span>
+                <span>Nivel intermedio</span>
+              </div>
+              <div class='flex items-center text-gray-300 text-lg'>
+                <span class='text-shogun-red mr-4'>✓</span>
+                <span>Nivel avanzado</span>
+              </div>
+              <div class='flex items-center text-gray-300 text-lg'>
+                <span class='text-shogun-red mr-4'>✓</span>
+                <span>Profesionales</span>
+              </div>
+            </div>
+          </div>
+
+          <div class='text-center'>
+            <h3 class='text-3xl font-oswald text-white mb-8'>EDADES</h3>
+            <div class='space-y-4 text-left'>
+              <div class='flex items-center text-gray-300 text-lg'>
+                <span class='text-shogun-red mr-4'>✓</span>
+                <span>Niños desde 5 años</span>
+              </div>
+              <div class='flex items-center text-gray-300 text-lg'>
+                <span class='text-shogun-red mr-4'>✓</span>
+                <span>Adolescentes</span>
+              </div>
+              <div class='flex items-center text-gray-300 text-lg'>
+                <span class='text-shogun-red mr-4'>✓</span>
+                <span>Adultos</span>
+              </div>
+              <div class='flex items-center text-gray-300 text-lg'>
+                <span class='text-shogun-red mr-4'>✓</span>
+                <span>Hasta que el cuerpo aguante</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='text-center mt-16'>
+          <p class='text-xl text-gray-300 max-w-3xl mx-auto'>
+            <strong class='text-white'>Horarios flexibles:</strong> Clases de mañana
+            y tarde para adaptarnos a tu rutina.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class='py-20 bg-gradient-to-r from-shogun-red to-red-700'>
+      <div class='container mx-auto px-4 text-center'>
+        <h2
+          class='text-5xl md:text-6xl font-oswald text-white mb-6 text-shadow-strong'>
+          PRIMERA CLASE
+        </h2>
+        <h3
+          class='text-6xl md:text-7xl font-oswald text-white mb-8 text-shadow-strong'>
+          GRATIS
+        </h3>
+        <p class='text-2xl text-white mb-12 max-w-3xl mx-auto'>
+          Vente, nos conocemos y de paso te conviertes en un Shogun Fighter 💪🏼🙏
+        </p>
+        <a
+          href='tel:+34672693733'
+          class='bg-white text-shogun-red px-12 py-4 text-xl font-oswald font-bold rounded-lg hover:bg-gray-100 transition-colors inline-block'>
+          LLAMA AHORA: 672 693 733
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQ faqs={faqs} />
+
+    <!-- Contact Section -->
+    <section class='py-20 bg-shogun-black'>
+      <div class='container mx-auto px-4'>
+        <div class='text-center mb-12'>
+          <h2 class='text-4xl font-oswald text-white mb-6'>VISÍTANOS</h2>
+          <p class='text-xl text-gray-400'>
+            Tu nueva casa de artes marciales te espera
+          </p>
+        </div>
+
+        <div class='max-w-4xl mx-auto'>
+          <div class='grid md:grid-cols-2 gap-12'>
+            <div>
+              <h3 class='text-2xl font-oswald text-white mb-6'>UBICACIÓN</h3>
+              <div class='space-y-4 text-gray-300'>
+                <p class='flex items-center text-lg'>
+                  <span class='text-shogun-red mr-4'>📍</span>
+                  Calle Sierra Toledana, 11<br />
+                  Vallecas, Madrid 28031
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class='text-2xl font-oswald text-white mb-6'>CONTACTO</h3>
+              <div class='space-y-4 text-gray-300'>
+                <p class='flex items-center text-lg'>
+                  <span class='text-shogun-red mr-4'>☎️</span>
+                  <a
+                    href='tel:+34672693733'
+                    class='hover:text-white transition-colors'>672 693 733</a
+                  >
+                </p>
+                <p class='flex items-center text-lg'>
+                  <span class='text-shogun-red mr-4'>🕐</span>
+                  Mañanas y tardes<br />
+                  <span class='text-sm text-gray-400'
+                    >Llama para horarios específicos</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class='text-center mt-16'>
+            <a
+              href='tel:+34672693733'
+              class='btn-primary px-12 py-4 text-xl inline-block rounded-lg'>
+              LLAMA Y RESERVA TU CLASE GRATIS
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

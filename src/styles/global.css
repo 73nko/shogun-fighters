@@ -89,6 +89,19 @@ h1, h2, h3, h4, h5, h6 {
 	animation: punch 0.3s ease-in-out;
 }
 
+/* FAQ Details/Summary styling */
+details > summary {
+	list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+	display: none;
+}
+
+details[open] > summary svg {
+	transform: rotate(180deg);
+}
+
 /* Prose styles for blog content */
 .prose {
 	max-width: none;
