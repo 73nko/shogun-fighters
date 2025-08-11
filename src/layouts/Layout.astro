@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
 	title: string;
 	description?: string;
@@ -43,8 +45,6 @@ const canonicalUrl = canonical || currentUrl.href;
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 		
-		<!-- Import Tailwind CSS -->
-		<link rel="stylesheet" href="/src/styles/global.css" />
 	</head>
 	<body class="min-h-screen bg-black text-white antialiased">
 		<slot />
