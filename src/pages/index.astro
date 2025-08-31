@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import SEO from '../components/SEO.astro';
 import FAQ from '../components/FAQ.astro';
+import Schedule from '../components/Schedule.astro';
+import Pricing from '../components/Pricing.astro';
 
 const faqs = [
   {
@@ -235,6 +237,20 @@ const faqs = [
             y tarde para adaptarnos a tu rutina.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id='schedule' class='py-20 bg-shogun-black'>
+      <div class='container mx-auto px-4'>
+        <Schedule />
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id='pricing' class='py-20 bg-shogun-gray-dark'>
+      <div class='container mx-auto px-4'>
+        <Pricing />
       </div>
     </section>
 

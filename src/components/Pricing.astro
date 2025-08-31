@@ -1,0 +1,147 @@
+---
+const pricing = {
+  adults: [
+    { name: '1 Actividad', price: '70€' },
+    { name: 'Tarifa Completa', price: '100€' },
+  ],
+  bonos: [
+    { name: 'Bono 10 clases', price: '80€', details: 'válido 3 meses' },
+    { name: 'Clase suelta', price: '12€' },
+    { name: 'Clases personales', price: 'Consultar' },
+  ],
+  infantil: [
+    { name: 'Infantil', price: '55€' },
+    { name: 'Junior', price: '60€' },
+  ],
+  descuentos: ['Familia numerosa', 'Familia monoparental', 'Desempleados'],
+};
+---
+
+<div class='pricing-container'>
+  <h2>Precios</h2>
+  <div class='pricing-grid'>
+    <div class='pricing-card'>
+      <h3>Adultos</h3>
+      <ul>
+        {
+          pricing.adults.map((item) => (
+            <li>
+              <>
+                <span>{item.name}</span>
+                <span>{item.price}</span>
+              </>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class='pricing-card'>
+      <h3>Bonos y Clases Sueltas</h3>
+      <ul>
+        {
+          pricing.bonos.map((item) => (
+            <li>
+              <span>
+                {item.name} {item.details && `(${item.details})`}
+              </span>
+              <span>{item.price}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class='pricing-card'>
+      <h3>Infantil y Junior</h3>
+      <ul>
+        {
+          pricing.infantil.map((item) => (
+            <li>
+              <>
+                <span>{item.name}</span>
+                <span>{item.price}</span>
+              </>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class='pricing-card'>
+      <h3>Descuentos Especiales</h3>
+      <ul>
+        {
+          pricing.descuentos.map((item) => (
+            <li class='discount-item'>{item}</li>
+          ))
+        }
+      </ul>
+      <p class='contact-info'>Contacta para más información: 672 693 733</p>
+    </div>
+  </div>
+  <div class='pricing-footer'>
+    <span>Sin Permanencia</span>
+    <span>Sin Matrícula</span>
+  </div>
+</div>
+
+<style>
+  .pricing-container {
+    padding: 2rem;
+    color: white;
+    text-align: center;
+  }
+  .pricing-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .pricing-card {
+    background-color: #141414;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #333;
+  }
+  .pricing-card h3 {
+    color: #e50914;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e50914;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pricing-card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #333;
+  }
+  .pricing-card li:last-child {
+    border-bottom: none;
+  }
+  .pricing-card li.discount-item {
+    justify-content: center;
+    font-weight: bold;
+  }
+  .contact-info {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: #e50914;
+  }
+  .pricing-footer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+</style>
