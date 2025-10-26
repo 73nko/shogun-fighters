@@ -72,42 +72,43 @@ const activityDisplayNames = {
 };
 ---
 
-<div class="schedule-container">
+<div class='schedule-container'>
   <h2>Horario de Clases</h2>
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">Todas</button>
+  <div class='filter-buttons'>
+    <button class='filter-btn active' data-filter='all'>Todas</button>
     {
       activities.map((activity) => (
-        <button class="filter-btn" data-filter={activity}>
-          {activityDisplayNames[activity] || activity}
+        <button class='filter-btn' data-filter={activity}>
+          {activityDisplayNames[
+            activity as keyof typeof activityDisplayNames
+          ] || activity}
         </button>
       ))
     }
   </div>
 
-  <div class="schedule-grid">
-    <div class="header"></div>
-    {schedule.days.map((day) => <div class="header day">{day}</div>)}
+  <div class='schedule-grid'>
+    <div class='header'></div>
+    {schedule.days.map((day) => <div class='header day'>{day}</div>)}
 
     {
       schedule.times.map((time) => (
         <>
-          <div class="header time">{time}</div>
+          <div class='header time'>{time}</div>
           {schedule.days.map((day) => {
             const classForCell = schedule.classes.find(
-              (c) => c.time === time && c.days.includes(day),
+              (c) => c.time === time && c.days.includes(day)
             );
             const activity = classForCell ? classForCell.activity : '';
-            const displayName = classForCell
-              ? classForCell.displayName || classForCell.activity
+            const displayName =
+              classForCell ?
+                classForCell.displayName || classForCell.activity
               : '';
             return (
               <div
                 class={`class-cell ${activity}`}
                 data-activity={activity}
-                set:html={displayName}
-              >
-              </div>
+                set:html={displayName}></div>
             );
           })}
         </>
