@@ -13,54 +13,105 @@ const schedule = {
     '21:00',
   ],
   classes: [
-    { time: '10:00', activity: 'THAI' },
-    { time: '11:00', activity: 'BOXEO' },
-    { time: '12:00', activity: 'MMA' },
-    { time: '13:00', activity: 'PERSONAL' },
-    { time: '17:00', activity: 'INFANTIL' },
-    { time: '18:00', activity: 'BOX.THAI' },
-    { time: '19:00', activity: 'BOXEO' },
-    { time: '20:00', activity: 'MMA' },
-    { time: '21:00', activity: 'THAI' },
+    {
+      time: '10:00',
+      activity: 'THAI-BOXEO-MMA',
+      days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+      displayName: 'THAI<br>BOXEO<br>MMA',
+    },
+    {
+      time: '11:00',
+      activity: 'PERSONAL',
+      days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+    },
+    {
+      time: '12:00',
+      activity: 'PERSONAL',
+      days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+    },
+    {
+      time: '13:00',
+      activity: 'PERSONAL',
+      days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+    },
+    {
+      time: '17:00',
+      activity: 'INFANTIL',
+      days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+    },
+    { time: '18:00', activity: 'NO-GI', days: ['Lunes', 'Miércoles'] },
+    { time: '18:00', activity: 'BJJ', days: ['Martes', 'Jueves', 'Viernes'] },
+    {
+      time: '19:00',
+      activity: 'BOXEO',
+      days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+    },
+    {
+      time: '20:00',
+      activity: 'MMA',
+      days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+    },
+    {
+      time: '21:00',
+      activity: 'THAI',
+      days: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+    },
   ],
 };
 
 const activities = [...new Set(schedule.classes.map((c) => c.activity))];
+const activityDisplayNames = {
+  'THAI-BOXEO-MMA': 'THAI / BOXEO / MMA',
+  PERSONAL: 'PERSONAL',
+  INFANTIL: 'INFANTIL',
+  'NO-GI': 'NO-GI',
+  BJJ: 'BJJ',
+  BOXEO: 'BOXEO',
+  MMA: 'MMA',
+  THAI: 'THAI',
+};
 ---
 
-<div class='schedule-container'>
+<div class="schedule-container">
   <h2>Horario de Clases</h2>
-  <div class='filter-buttons'>
-    <button class='filter-btn active' data-filter='all'>Todas</button>
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">Todas</button>
     {
       activities.map((activity) => (
-        <button class='filter-btn' data-filter={activity}>
-          {activity}
+        <button class="filter-btn" data-filter={activity}>
+          {activityDisplayNames[activity] || activity}
         </button>
       ))
     }
   </div>
 
-  <div class='schedule-grid'>
-    <div class='header'></div>
-    {schedule.days.map((day) => <div class='header day'>{day}</div>)}
+  <div class="schedule-grid">
+    <div class="header"></div>
+    {schedule.days.map((day) => <div class="header day">{day}</div>)}
 
     {
-      schedule.times.map((time) => {
-        const classForTime = schedule.classes.find((c) => c.time === time);
-        return (
-          <>
-            <div class='header time'>{time}</div>
-            {schedule.days.map((day) => (
+      schedule.times.map((time) => (
+        <>
+          <div class="header time">{time}</div>
+          {schedule.days.map((day) => {
+            const classForCell = schedule.classes.find(
+              (c) => c.time === time && c.days.includes(day),
+            );
+            const activity = classForCell ? classForCell.activity : '';
+            const displayName = classForCell
+              ? classForCell.displayName || classForCell.activity
+              : '';
+            return (
               <div
-                class={`class-cell ${classForTime ? classForTime.activity : ''}`}
-                data-activity={classForTime ? classForTime.activity : ''}>
-                {classForTime ? classForTime.activity : ''}
+                class={`class-cell ${activity}`}
+                data-activity={activity}
+                set:html={displayName}
+              >
               </div>
-            ))}
-          </>
-        );
-      })
+            );
+          })}
+        </>
+      ))
     }
   </div>
 </div>
